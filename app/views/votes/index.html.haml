@@ -11,8 +11,8 @@
 
   - @votes.each do |vote|
     %tr
-      %td= vote.precinct_id
-      %td= vote.candidate_id
+      %td= vote.precinct.number
+      %td= vote.candidate.name
       %td= vote.votes
       %td= link_to 'Show', vote
       %td= link_to 'Edit', edit_vote_path(vote)
