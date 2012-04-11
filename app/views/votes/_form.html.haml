@@ -9,11 +9,14 @@
   .field
     = f.label :precinct_id
     = f.select(:precinct_id, Precinct.all.collect {|p| [ p.precinct_full, p.id ] }, {:include_blank => false})
-  .field
-    = f.label :candidate_id
-    = f.number_field :candidate_id
-  .field
-    = f.label :votes
-    = f.number_field :votes
+  %table
+    %th Candidate
+    %th Votes
+    - @candidates.each do |candidate|
+      %tr
+        %td
+          = label_tag candidate.name
+        %td
+          = f.text_field :votes
   .actions
     = f.submit 'Save'
