@@ -4,12 +4,12 @@ describe "votes/index" do
   before(:each) do
     assign(:votes, [
       stub_model(Vote,
-        :precint_id => 1,
+        :precinct_id => 1,
         :candidate_id => 2,
         :votes => 3
       ),
       stub_model(Vote,
-        :precint_id => 1,
+        :precinct_id => 1,
         :candidate_id => 2,
         :votes => 3
       )

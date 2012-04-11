@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "votes/show" do
   before(:each) do
     @vote = assign(:vote, stub_model(Vote,
-      :precint_id => 1,
+      :precinct_id => 1,
       :candidate_id => 2,
       :votes => 3
     ))
