@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Number:
+  = @precinct.number
+%p
+  %b Description:
+  = @precinct.description
+
+= link_to 'Edit', edit_precinct_path(@precinct)
+\|
+= link_to 'Back', precincts_path

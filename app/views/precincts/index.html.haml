@@ -1,0 +1,21 @@
+%h1 Listing precincts
+
+%table
+  %tr
+    %th Number
+    %th Description
+    %th
+    %th
+    %th
+
+  - @precincts.each do |precinct|
+    %tr
+      %td= precinct.number
+      %td= precinct.description
+      %td= link_to 'Show', precinct
+      %td= link_to 'Edit', edit_precinct_path(precinct)
+      %td= link_to 'Destroy', precinct, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Precinct', new_precinct_path

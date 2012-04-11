@@ -1,0 +1,16 @@
+= form_for @precinct do |f|
+  -if @precinct.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@precinct.errors.count, "error")} prohibited this precinct from being saved:"
+      %ul
+        - @precinct.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :number
+    = f.number_field :number
+  .field
+    = f.label :description
+    = f.text_field :description
+  .actions
+    = f.submit 'Save'
