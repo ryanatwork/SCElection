@@ -1,3 +1,4 @@
 class Vote < ActiveRecord::Base
-  attr_accessible :candidate_id, :precint_id, :votes
+  attr_accessible :candidate_id, :precinct_id, :votes
+  belongs_to :candidate,:precinct
 end

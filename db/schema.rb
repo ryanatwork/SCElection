@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(:version => 20120411045621) do
   end
 
   create_table "votes", :force => true do |t|
-    t.integer  "precint_id"
+    t.integer  "precinct_id"
     t.integer  "candidate_id"
     t.integer  "votes"
     t.datetime "created_at",   :null => false

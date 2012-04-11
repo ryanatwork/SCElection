@@ -1,7 +1,7 @@
 class CreateVotes < ActiveRecord::Migration
   def change
     create_table :votes do |t|
-      t.integer :precint_id
+      t.integer :precinct_id
       t.integer :candidate_id
       t.integer :votes
 
