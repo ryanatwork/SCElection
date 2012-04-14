@@ -2,6 +2,9 @@ class Precinct < ActiveRecord::Base
   attr_accessible :description, :number, :location, :latitude, :longitude
   has_many :votes
 
+  geocoded_by :full_address
+  after_validation :geocode
+
   def precinct_full
     self.number.to_s + '-' + self.description
   end
