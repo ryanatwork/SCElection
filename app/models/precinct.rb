@@ -1,5 +1,5 @@
 class Precinct < ActiveRecord::Base
-  attr_accessible :description, :number
+  attr_accessible :description, :number, :location
   has_many :votes
 
   def precinct_full
