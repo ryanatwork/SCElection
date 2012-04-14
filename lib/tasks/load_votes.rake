@@ -15,6 +15,8 @@ task :vote => :environment do
       Precinct.create(:number => row[2], :description => row[4], :location => row[5])
     end
   end
+  Precinct.create(:number => 0, :description => "Vote by mail", :location => "23920 Valencia Blvd.")
+
 
   puts "Vote information"
   CSV.foreach("data/Votes.csv") do |row|
