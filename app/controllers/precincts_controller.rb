@@ -1,4 +1,5 @@
 class PrecinctsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :show]
   # GET /precincts
   # GET /precincts.json
   def index

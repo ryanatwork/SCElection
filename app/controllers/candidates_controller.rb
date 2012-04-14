@@ -1,4 +1,5 @@
 class CandidatesController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :show]
   # GET /candidates
   # GET /candidates.json
   def index

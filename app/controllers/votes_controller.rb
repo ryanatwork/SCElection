@@ -1,4 +1,5 @@
 class VotesController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :show]
   # GET /votes
   # GET /votes.json
   def index
