@@ -3,7 +3,8 @@
 %table
   %tr
     %th Number
-    %th Description
+    %th Location
+    %th Address
     %th
     %th
     %th
@@ -12,6 +13,7 @@
     %tr
       %td= precinct.number
       %td= precinct.description
+      %td= precinct.location
       %td= link_to 'Show', precinct
       %td= link_to 'Edit', edit_precinct_path(precinct)
       %td= link_to 'Destroy', precinct, :confirm => 'Are you sure?', :method => :delete
