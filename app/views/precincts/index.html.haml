@@ -6,8 +6,9 @@
     %th Location
     %th Address
     %th
-    %th
-    %th
+    - if user_signed_in?
+      %th
+      %th
 
   - @precincts.each do |precinct|
     %tr
@@ -15,9 +16,10 @@
       %td= precinct.description
       %td= precinct.location
       %td= link_to 'Show', precinct
-      %td= link_to 'Edit', edit_precinct_path(precinct)
-      %td= link_to 'Destroy', precinct, :confirm => 'Are you sure?', :method => :delete
+      - if user_signed_in?
+        %td= link_to 'Edit', edit_precinct_path(precinct)
+        %td= link_to 'Destroy', precinct, :confirm => 'Are you sure?', :method => :delete
 
 %br
-
-= link_to 'New Precinct', new_precinct_path
+- if user_signed_in?
+  = link_to 'New Precinct', new_precinct_path

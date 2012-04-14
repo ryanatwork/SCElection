@@ -21,7 +21,7 @@
 
 
 
-
-= link_to 'Edit', edit_candidate_path(@candidate)
+- if user_signed_in?
+  = link_to 'Edit', edit_candidate_path(@candidate)
 \|
 = link_to 'Back', candidates_path

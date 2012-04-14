@@ -23,11 +23,7 @@
       %td= vote.candidate.name
       %td= vote.votes
 
-
-
-
-
-
-= link_to 'Edit', edit_precinct_path(@precinct)
+- if user_signed_in?
+  = link_to 'Edit', edit_precinct_path(@precinct)
 \|
 = link_to 'Back', precincts_path

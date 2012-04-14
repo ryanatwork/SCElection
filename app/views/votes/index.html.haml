@@ -6,8 +6,9 @@
     %th Candidate
     %th Votes
     %th
-    %th
-    %th
+    - if user_signed_in?
+      %th
+      %th
 
   - @votes.each do |vote|
     %tr
@@ -15,9 +16,10 @@
       %td= vote.candidate.name
       %td= vote.votes
       %td= link_to 'Show', vote
-      %td= link_to 'Edit', edit_vote_path(vote)
-      %td= link_to 'Destroy', vote, :confirm => 'Are you sure?', :method => :delete
+      - if user_signed_in?
+        %td= link_to 'Edit', edit_vote_path(vote)
+        %td= link_to 'Destroy', vote, :confirm => 'Are you sure?', :method => :delete
 
 %br
-
-= link_to 'New Vote', new_vote_path
+- if user_signed_in?
+  = link_to 'New Vote', new_vote_path
