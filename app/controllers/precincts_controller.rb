@@ -2,7 +2,7 @@ class PrecinctsController < ApplicationController
   # GET /precincts
   # GET /precincts.json
   def index
-    @precincts = Precinct.all
+    @precincts = Precinct.all(:order => "number")
 
     respond_to do |format|
       format.html # index.html.erb
