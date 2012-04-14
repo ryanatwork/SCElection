@@ -4,6 +4,24 @@
   %b Name:
   = @candidate.name
 
+%p
+  Votes by precinct
+
+%table
+  %tr
+    %th Precinct
+    %th Votes
+    %th
+    %th
+
+  - @candidate.votes.each do |vote|
+    %tr
+      %td= vote.precinct_id
+      %td= vote.votes
+
+
+
+
 = link_to 'Edit', edit_candidate_path(@candidate)
 \|
 = link_to 'Back', candidates_path
