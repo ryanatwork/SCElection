@@ -12,7 +12,7 @@ task :vote => :environment do
   puts "Precinct information"
   CSV.foreach("data/Precincts.csv", {:headers => true}) do |row|
     if row[1].present?
-      Precinct.create(:number => row[2], :description => row[4])
+      Precinct.create(:number => row[2], :description => row[4], :location => row[5])
     end
   end
 
