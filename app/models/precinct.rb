@@ -6,4 +6,8 @@ class Precinct < ActiveRecord::Base
     self.number.to_s + '-' + self.description
   end
 
+  def full_address
+    self.location + 'Santa Clarita, CA'
+  end
+
 end
