@@ -2,9 +2,6 @@ class Precinct < ActiveRecord::Base
   attr_accessible :description, :number, :location, :latitude, :longitude
   has_many :votes
 
-  geocoded_by :full_address
-  after_validation :geocode
-
   acts_as_gmappable
 
   def gmaps4rails_address
