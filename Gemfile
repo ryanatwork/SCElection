@@ -14,7 +14,6 @@ gem 'devise'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 2.0.2'
-gem 'geocoder'
 gem 'gmaps4rails'
 
 group :development, :test do
