@@ -59,6 +59,8 @@ GEM
       i18n (~> 0.4)
     gmaps4rails (1.4.8)
       json
+    google_charts (1.2.0)
+      actionpack (>= 3.x)
     haml (3.1.4)
     haml-rails (0.3.4)
       actionpack (~> 3.0)
@@ -159,6 +161,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   gmaps4rails
+  google_charts
   haml-rails
   jquery-rails
   pg
