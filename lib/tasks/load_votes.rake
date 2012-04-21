@@ -8,6 +8,7 @@ task :vote => :environment do
       Candidate.create(:name => row[2])
     end
   end
+  puts Candidate.count
 
   puts "Precinct information"
   CSV.foreach("data/Precincts.csv") do |row|
@@ -16,13 +17,14 @@ task :vote => :environment do
     end
   end
   Precinct.create(:number => 0, :description => "Vote by mail", :location => "23920 Valencia Blvd.")
-
+  puts Precinct.count
 
   puts "Vote information"
   CSV.foreach("data/Votes.csv") do |row|
-      if row[1].present?
-        Vote.create(:precinct_id => row[2], :candidate_id => row[3], :votes => row[4])
-      end
+    if row[1].present?
+      Vote.create(:precinct_id => row[2], :candidate_id => row[3], :votes => row[4])
     end
+  end
+  puts Vote.count
 
 end
