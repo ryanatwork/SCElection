@@ -1,3 +1,26 @@
+= javascript_include_tag "https://www.google.com/jsapi"
+-vote_data = @candidate.votes.map{|x| ["Precinct #{x.precinct.number}", x.votes]}
+
+%script{:type=>"text/javascript"}
+  google.load("visualization", "1", {packages:["corechart"]});
+  google.setOnLoadCallback(drawChart);
+  function drawChart() {
+  var data = google.visualization.arrayToDataTable(
+  =raw(vote_data)
+  );
+
+  var options = {
+  title: 'Votes by Precinct'
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+  chart.draw(data, options);
+  }
+
+%p#notice= notice
+
+#chart_div{:style => "width:900px;height:500px"}
+
 %p#notice= notice
 
 %p
