@@ -15,7 +15,6 @@ gem 'haml-rails'
 gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 2.0.2'
 gem 'gmaps4rails'
-gem 'google_charts'
 
 group :development, :test do
   gem 'faker'
