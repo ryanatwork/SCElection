@@ -32,20 +32,21 @@
   %b Location:
   = @precinct.location
 
-%table
-  %tr
-    %th Candidate
-    %th Votes
+.row
+  .span4
+    %table.table.table-striped
+      %tr
+        %th Candidate
+        %th Votes
 
-  - @precinct.votes.each do |vote|
-    %tr
-      %td= vote.candidate.name
-      %td= vote.votes
-%br
+      - @precinct.votes.each do |vote|
+        %tr
+          %td= vote.candidate.name
+          %td= vote.votes
 %p
-  %b Total:
+  %b Total Votes:
   = @precinct.votes.sum(:votes)
-
+%br
 - if user_signed_in?
   = link_to 'Edit', edit_precinct_path(@precinct)
 \|
