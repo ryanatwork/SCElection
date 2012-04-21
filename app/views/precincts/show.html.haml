@@ -21,9 +21,8 @@
 
 #chart_div{:style => "width:900px;height:500px"}
 
-
 %p
-  %b Number:
+  %b Precinct Number:
   = @precinct.number
 %p
   %b Description:
@@ -42,6 +41,10 @@
     %tr
       %td= vote.candidate.name
       %td= vote.votes
+%br
+%p
+  %b Total:
+  = @precinct.votes.sum(:votes)
 
 - if user_signed_in?
   = link_to 'Edit', edit_precinct_path(@precinct)
