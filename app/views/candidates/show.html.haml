@@ -13,7 +13,7 @@
   title: 'Votes by Precinct'
   };
 
-  var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+  var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
   chart.draw(data, options);
   }
 
@@ -33,15 +33,14 @@
 %table.table.table-striped
   %tr
     %th Precinct
+    %th Description
     %th Votes
-    %th
-    %th
 
   - @candidate.votes.each do |vote|
     %tr
-      %td= vote.precinct_id
+      %td= vote.precinct.number
+      %td= vote.precinct.description
       %td= vote.votes
-
 
 
 - if user_signed_in?

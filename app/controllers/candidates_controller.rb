@@ -15,6 +15,7 @@ class CandidatesController < ApplicationController
   # GET /candidates/1.json
   def show
     @candidate = Candidate.find(params[:id])
+    @candidate.votes.sort! { |a,b| a.precinct.number <=> b.precinct.number }
 
     respond_to do |format|
       format.html # show.html.erb
