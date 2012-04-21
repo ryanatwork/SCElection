@@ -19,21 +19,18 @@
 
 %p#notice= notice
 
-#chart_div{:style => "width:900px;height:500px"}
-
-%p
-  %b Precinct Number:
-  = @precinct.number
-%p
-  %b Description:
-  = @precinct.description
-
-%p
-  %b Location:
-  = @precinct.location
-
 .row
-  .span4
+  .span6
+    %p
+      %b Precinct Number:
+      = @precinct.number
+    %p
+      %b Description:
+      = @precinct.description
+
+    %p
+      %b Location:
+      = @precinct.location
     %table.table.table-striped
       %tr
         %th Candidate
@@ -43,9 +40,11 @@
         %tr
           %td= vote.candidate.name
           %td= vote.votes
-%p
-  %b Total Votes:
-  = @precinct.votes.sum(:votes)
+    %p
+      %b Total Votes:
+      = @precinct.votes.sum(:votes)
+  .span6
+    #chart_div{:style => "width:460px;height:350px"}
 %br
 - if user_signed_in?
   = link_to 'Edit', edit_precinct_path(@precinct)
