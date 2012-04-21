@@ -2,10 +2,10 @@
 
 %p
   %b Precinct:
-  = @vote.precinct_id
+  = @vote.precinct.number
 %p
   %b Candidate:
-  = @vote.candidate_id
+  = @vote.candidate.name
 %p
   %b Votes:
   = @vote.votes
