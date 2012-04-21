@@ -4,6 +4,7 @@ class VotesController < ApplicationController
   # GET /votes.json
   def index
     @votes = Vote.all
+    @votes.sort! { |a,b| a.precinct.number <=> b.precinct.number }
 
     respond_to do |format|
       format.html # index.html.erb
