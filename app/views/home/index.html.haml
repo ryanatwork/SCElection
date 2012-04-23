@@ -1,6 +1,61 @@
+%script{:type=>"text/javascript"}
+  google.load("visualization", "1", {packages:["corechart"]});
+  google.setOnLoadCallback(drawChart);
+  function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Ed Colley',4438],
+  ['Bob Kellar',7519],
+  ['Jon Hatami',3915],
+  ['Laurie Ender',5408],
+  ['TimBen Boydston',6145]
+  ]);
+
+  var options = {
+  title: 'Votes by Candidate'
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+  chart.draw(data, options);
+  }
+
 .hero-unit
-  %h1 Santa Clarita Election Data
+  %h1 2012 Santa Clarita Election Data
   %p This site contains information about the City of Santa Clarita City Council Elections
   %p
     %a.btn.btn-primary.btn-large Learn more &raquo;
-
+.row
+  .span4
+    %h2 Results
+    %table.table
+      %th Candidate
+      %th Votes
+      %th Percent
+      %tr
+        %td Ed Colley
+        %td 4438
+        %td 16.1%
+      %tr
+        %td Bob Kellar
+        %td 7519
+        %td 27.4%
+      %tr
+        %td Jon Hatami
+        %td 3915
+        %td 14.2%
+      %tr
+        %td Laurie Ender
+        %td 5408
+        %td 19.7%
+      %tr
+        %td TimBen Boydston
+        %td 6145
+        %td 22.4%
+  .span4
+    #chart_div{:style => "width:320px;height:300px"}
+  .span4
+    %h2 Turnout
+    %ul
+      %li Citywide Registration 90634
+      %li Absentee Turnout 11607 (12.8%)
+      %li Precinct Turnout 3783 (4.1%)
+      %li Overall Voter Turnout 15930 (16.9%)
