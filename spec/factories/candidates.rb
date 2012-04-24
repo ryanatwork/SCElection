@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :candidate do
-    name "MyString"
+    name "John Smith"
   end
 end
