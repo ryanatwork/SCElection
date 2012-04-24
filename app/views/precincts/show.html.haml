@@ -4,7 +4,10 @@
   google.load("visualization", "1", {packages:["corechart"]});
   google.setOnLoadCallback(drawChart);
   function drawChart() {
-  var data = google.visualization.arrayToDataTable(
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Candidate');
+  data.addColumn('number', 'Votes');
+  data.addRows(
   =raw(vote_data)
   );
 
