@@ -9,7 +9,7 @@ describe "votes/edit" do
     ))
   end
 
-  it "renders the edit vote form" do
+pending  it "renders the edit vote form" do
     render
 
     # Run the generator again with the --webrat flag if you want to use webrat matchers
