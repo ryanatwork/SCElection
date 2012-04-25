@@ -3,6 +3,6 @@
 FactoryGirl.define do
   factory :precinct do
     number 1
-    description "MyString"
+    description "Santa Clarita Library"
   end
 end
