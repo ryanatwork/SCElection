@@ -8,11 +8,11 @@ class Precinct < ActiveRecord::Base
   end
 
   def precinct_full
-    self.number.to_s + '-' + self.description
+    "#{self.number.to_s}-#{self.description}"
   end
 
   def full_address
-    self.location + 'Santa Clarita, CA'
+    "#{self.location} Santa Clarita, CA"
   end
 
 end
